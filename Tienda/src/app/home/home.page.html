@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tienda de Ropa
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="prendaEditando.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Stock</ion-label>
+    <ion-input type="number" [(ngModel)]="prendaEditando.stock"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input type="number" [(ngModel)]="prendaEditando.precio"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="guardar()">Añadir Prenda</ion-button>
+
+  <h1>Lista de Prendas</h1>
+  <ion-list>
+    <ion-item *ngFor="let prenda of arrayPrendas">
+      <ion-grid>
+        <ion-row>
+          <h2>{{prenda.data.nombre}}</h2>
+        </ion-row>
+        <ion-row>
+          <p>Stock: {{prenda.data.stock}}</p>
+        </ion-row>
+        <ion-row>
+          <p>Precio: {{prenda.data.precio}}€</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
