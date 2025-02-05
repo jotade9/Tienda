@@ -16,4 +16,13 @@ export class FirestoreService {
     return this.angularFirestore.collection(coleccion).snapshotChanges();
 
   }
+   // Actualizar una prenda en Firestore
+   actualizar(coleccion: string, id: string, objeto: any) {
+    return this.angularFirestore.collection(coleccion).doc(id).update(objeto);
+  }
+
+  // Eliminar una prenda en Firestore
+  borrar(coleccion: string, id: string) {
+    return this.angularFirestore.collection(coleccion).doc(id).delete();
+  }
 }

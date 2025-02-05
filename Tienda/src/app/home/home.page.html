@@ -22,22 +22,36 @@
     <ion-input type="number" [(ngModel)]="prendaEditando.precio"></ion-input>
   </ion-item>
 
-  <ion-button (click)="guardar()">Añadir Prenda</ion-button>
+  <ion-item>
+    <ion-label>Imagen URL</ion-label>
+    <ion-input [(ngModel)]="prendaEditando.imagen"></ion-input>
+  </ion-item>
+
+  <ion-button *ngIf="!editando" (click)="guardar()">Añadir Prenda</ion-button>
+  <ion-button *ngIf="editando" color="warning" (click)="editar()">Editar Prenda</ion-button>
+  <ion-button *ngIf="editando" color="danger" (click)="eliminar()">Eliminar Prenda</ion-button>
+  <ion-button *ngIf="editando" color="medium" (click)="cancelarEdicion()">Cancelar</ion-button>
 
   <h1>Lista de Prendas</h1>
-  <ion-list>
-    <ion-item *ngFor="let prenda of arrayPrendas">
-      <ion-grid>
-        <ion-row>
-          <h2>{{prenda.data.nombre}}</h2>
-        </ion-row>
-        <ion-row>
-          <p>Stock: {{prenda.data.stock}}</p>
-        </ion-row>
-        <ion-row>
-          <p>Precio: {{prenda.data.precio}}€</p>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-  </ion-list>
+
+  <!-- Sección de tarjetas en una cuadrícula -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let prenda of arrayPrendas">
+        <ion-card class="prenda-card">
+          <img *ngIf="prenda.data.imagen" [src]="prenda.data.imagen" alt="{{ prenda.data.nombre }}" class="prenda-img">
+          <ion-card-header>
+            <ion-card-title>{{ prenda.data.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Stock:</strong> {{ prenda.data.stock }}</p>
+            <p><strong>Precio:</strong> {{ prenda.data.precio }}€</p>
+            <ion-button expand="block" fill="outline" color="primary" (click)="seleccionarPrenda(prenda)">
+              Editar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
