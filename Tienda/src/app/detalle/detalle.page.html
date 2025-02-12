@@ -1,13 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>detalle</ion-title>
+    <ion-title>
+      Detalle de Prenda
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalle</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="prendaEditando.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Stock</ion-label>
+    <ion-input type="number" [(ngModel)]="prendaEditando.stock"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input type="number" [(ngModel)]="prendaEditando.precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Imagen URL</ion-label>
+    <ion-input [(ngModel)]="prendaEditando.imagen"></ion-input>
+  </ion-item>
+
+  <ion-button *ngIf="!editando" (click)="guardar()">Añadir</ion-button>
+  <ion-button *ngIf="editando" (click)="editar()">Editar</ion-button>
+  <ion-button *ngIf="editando" color="danger" (click)="eliminar()">Eliminar Prenda</ion-button>
+  <ion-button color="medium" (click)="volverAtras()">Cancelar</ion-button>
 </ion-content>

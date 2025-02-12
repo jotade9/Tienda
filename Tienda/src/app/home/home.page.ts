@@ -46,10 +46,18 @@ export class HomePage {
   }
 
   seleccionarPrenda(prenda: any) {
-    this.prendaEditando = { ...prenda.data };
-    this.idEditando = prenda.id;
-    this.editando = true;
-    this.router.navigate(['/detalle', this.idEditando]);
+    this.router.navigate(['/detalle', prenda.id], {
+      queryParams: {
+        nombre: prenda.data.nombre,
+        stock: prenda.data.stock,
+        precio: prenda.data.precio,
+        imagen: prenda.data.imagen
+      }
+    });
+  }
+
+  nuevaPrenda() {
+    this.router.navigate(['/detalle', 'nuevo']);
   }
 
   editar() {

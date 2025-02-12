@@ -7,27 +7,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-label>Nombre</ion-label>
-    <ion-input [(ngModel)]="prendaEditando.nombre"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Stock</ion-label>
-    <ion-input type="number" [(ngModel)]="prendaEditando.stock"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Precio</ion-label>
-    <ion-input type="number" [(ngModel)]="prendaEditando.precio"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Imagen URL</ion-label>
-    <ion-input [(ngModel)]="prendaEditando.imagen"></ion-input>
-  </ion-item>
-
-  <ion-button *ngIf="!editando" (click)="guardar()">Añadir Prenda</ion-button>
   <ion-button *ngIf="editando" color="warning" (click)="editar()">Editar Prenda</ion-button>
   <ion-button *ngIf="editando" color="danger" (click)="eliminar()">Eliminar Prenda</ion-button>
   <ion-button *ngIf="editando" color="medium" (click)="cancelarEdicion()">Cancelar</ion-button>
@@ -54,4 +33,10 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin-bottom: 20px; margin-right: 20px;">
+    <ion-fab-button (click)="nuevaPrenda()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

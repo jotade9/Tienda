@@ -1,0 +1,23 @@
+ion-item {
+  --background: #ffffff;
+  --border-radius: 15px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+ion-input {
+  --padding-start: 10px;
+}
+
+ion-button {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --background-focused: var(--ion-color-primary-tint);
+  --border-radius: 20px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: transform 0.2s ease-in-out;
+}
+
+ion-button:hover, ion-button:focus {
+  transform: scale(1.05);
+}
