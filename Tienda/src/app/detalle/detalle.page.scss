@@ -1,23 +1,112 @@
+/* Estilo para la barra de navegación */
+ion-toolbar {
+  --background: linear-gradient(135deg, #0056b3, #003f7f); /* Degradado moderno */
+  --color: white; /* Color blanco para el texto */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ion-title {
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los ion-item */
 ion-item {
   --background: #ffffff;
   --border-radius: 15px;
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+ion-item ion-label {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
 }
 
 ion-input {
   --padding-start: 10px;
+  --border-radius: 10px;
+  --background: #f9f9f9;
+  border: 1px solid #ddd;
+  font-size: 16px;
 }
 
+/* Botones */
 ion-button {
-  --background: var(--ion-color-primary);
-  --background-activated: var(--ion-color-primary-shade);
-  --background-focused: var(--ion-color-primary-tint);
-  --border-radius: 20px;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --transition: transform 0.2s ease-in-out;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  text-transform: capitalize;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-left: 25%;
+  width: 50%;
 }
 
 ion-button:hover, ion-button:focus {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
   transform: scale(1.05);
+}
+
+/* Botón de eliminar con color de advertencia */
+ion-button[color="danger"] {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+ion-button[color="danger"]:hover, ion-button[color="danger"]:focus {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+/* Botón de cancelar con color gris */
+ion-button[color="medium"] {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+ion-button[color="medium"]:hover, ion-button[color="medium"]:focus {
+  background: linear-gradient(135deg, #e67e22, #f39c12);
+}
+
+/* Ajuste para los campos de entrada */
+ion-item ion-input {
+  --padding-start: 15px;
+  --background: #f5f5f5;
+  --border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
+/* Fondo del contenido */
+ion-content {
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+/* Espaciado adicional entre los botones */
+ion-button:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+/* Mejorar la alineación de los inputs y etiquetas */
+ion-label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo general para la página de detalle */
+.page-detail {
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }

@@ -42,6 +42,8 @@ export class HomePage {
           data: datosPrenda.payload.doc.data()
         });
       });
+    }, (error) => {
+      console.error("Error al obtener prendas: ", error);
     });
   }
 

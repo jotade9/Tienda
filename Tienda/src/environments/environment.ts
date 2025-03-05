@@ -5,14 +5,21 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyBmDBDakKRdwkvr-fhH_YzbF2AOH8kjixM",
+    /*apiKey: "AIzaSyBmDBDakKRdwkvr-fhH_YzbF2AOH8kjixM",
     authDomain: "tienda-e6f4e.firebaseapp.com",
     databaseURL: "https://tienda-e6f4e-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "tienda-e6f4e",
     storageBucket: "tienda-e6f4e.firebasestorage.app",
     messagingSenderId: "403355725440",
     appId: "1:403355725440:web:2bc9aea85a9e12eb570065",
-    measurementId: "G-PZ4Q1TK0WQ"
+    measurementId: "G-PZ4Q1TK0WQ"*/
+    apiKey: "AIzaSyD-XegLWrIdZJWTC81wnjHB5nQkUkhIxCU",
+  authDomain: "ejemplo-tareas-b68dd.firebaseapp.com",
+  projectId: "ejemplo-tareas-b68dd",
+  storageBucket: "ejemplo-tareas-b68dd.appspot.com",
+  messagingSenderId: "962643459473",
+  appId: "1:962643459473:web:e0767bbeb3926c253d2e30",
+  measurementId: "G-14DZEKLYJK"
   }
 };
 
