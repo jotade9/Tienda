@@ -27,6 +27,10 @@
     <ion-input [(ngModel)]="prendaEditando.imagen"></ion-input>
   </ion-item>
 
+  <ion-button (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
+  <ion-button (click)="subirImagen()">Subir Imagen</ion-button>
+  <ion-button color="danger" (click)="eliminarArchivo(imagenSelec)">Eliminar Imagen</ion-button>
+
   <ion-button *ngIf="!editando" (click)="guardar()">Añadir</ion-button>
   <ion-button *ngIf="editando" (click)="editar()">Editar</ion-button>
   <ion-button *ngIf="editando" color="danger" (click)="eliminar()">Eliminar Prenda</ion-button>
